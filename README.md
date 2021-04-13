@@ -41,14 +41,11 @@ This project uses Python 3.6, besides Jupyter Notebook. The list of libraries to
 
 ## Motivation<a name="motivation"></a>
 
-In every distater happens therare are thousands of messages that are sent to orginization that are responsible to handle the situation and classification of these messages is a task that needs to be automated accuratley for the fast resposne. These messages can be calssified into different categories and each message can convey request for help becasue of different co-existence motivations. In this project, a machine learning `model` has been trained to automate this proccess.
+In every distater happens therare are thousands of messages that are sent to orginization that are responsible to handle the situation and classification of these messages is a task that needs to be automated accuratley for the fast resposne. These messages can be calssified into different categories and each message can convey request for help becasue of different co-existence motivations. In this project, a machine learning model has been trained to automate this proccess.
 
 ## File Descriptions <a name="files"></a>
 
-There are three files in `Files` directory of this project that investigates different questions that we want to answer.
-
-Data for this project is included in `Data` directory.
-
+In this project `ETL` and `Machine Learning` Pipelines are used 
 
 ## Results<a name="results"></a>
 
