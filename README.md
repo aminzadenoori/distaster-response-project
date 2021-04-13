@@ -26,7 +26,7 @@ This project uses Python 3.6, besides Jupyter Notebook. The list of libraries to
 * Sqlalchemy
 * Sklearn
 
-### Instructions:
+## Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
@@ -38,17 +38,10 @@ This project uses Python 3.6, besides Jupyter Notebook. The list of libraries to
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
-# Airbnb Seattle Data Analysis
 
 ## Motivation<a name="motivation"></a>
 
-In this project, I want to investigate the AirBnB dataset from Seattle to answer the following questions:
-
-1.How much is the average price of different room types, property types, and neighborhoods in Seattle data and which amenities are provided by the host in more expensive listings?
-
-2.How different features of a listing can be related to the review scores left by customers?
-
-3.How different features can be realted to predict the price of a listing based on the data modeling results?
+In every distater happens therare are thousands of messages that are sent to orginization that are responsible to handle the situation and classification of these messages is a task that needs to be automated accuratley for the fast resposne. These messages can be calssified into different categories and each message can convey request for help becasue of different co-existence motivations. In this project, a machine learning `model` has been trained to automate this proccess.
 
 ## File Descriptions <a name="files"></a>
 
