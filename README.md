@@ -53,12 +53,12 @@ In this project `ETL` and `Machine Learning` pipelines and multioutput classific
  
  `model/train_classifier.py`:
  
- `data/`:
+ `data/process_data.py`:
 
 
 ## Results<a name="results"></a>
 
-The report of this study can be found [here](https://amin-zadenoori.medium.com/studying-the-airbnb-seattle-data-by-crisp-dm-approach-e8fc42c34c46).
+There is an evaluation method in classifier that expresses results of the classification by the means of `F1score`, `precision`, and `recall`.
 
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
