@@ -46,14 +46,19 @@ In every distater happens ther are are thousands of messages that are sent to or
 ## File Descriptions <a name="files"></a>
 
 In this project `ETL` and `Machine Learning` pipelines and multioutput classification method are used and in the diagram below file desricption is shown.
+`
+├── app
 
+│   ├── run.py  # Flask file that runs app
 
-├── app     
-│   ├── run.py                           # Flask file that runs app
 │   └── templates   
-│       ├── go.html                      # Classification result page of web app
-│       └── master.html                  # Main page of web app    
+
+│          ├        ── go.html                      # Classification result page of web app
+
+│                  └── master.html                  # Main page of web app    
+
 ├── data                   
+
 │   ├── disaster_categories.csv          # Dataset including all the categories  
 │   ├── disaster_messages.csv            # Dataset including all the messages
 │   └── process_data.py                  # Data cleaning
@@ -65,7 +70,7 @@ In this project `ETL` and `Machine Learning` pipelines and multioutput classific
 |
 └── README.md
  
-
+`
 
 ## Results<a name="results"></a>
 
