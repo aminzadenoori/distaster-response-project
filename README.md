@@ -13,6 +13,19 @@
 </p>
 
 
+
+
+
+## Installation <a name="installation"></a>
+
+This project uses Python 3.6, besides Jupyter Notebook. The list of libraries to run this project are:
+* Pandas
+* Numpy
+* MatplotLib
+* Sqllite
+* Sqlalchemy
+* Sklearn
+
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
@@ -26,17 +39,6 @@
 
 3. Go to http://0.0.0.0:3001/
 # Airbnb Seattle Data Analysis
-
-
-## Installation <a name="installation"></a>
-
-This project uses Python 3, besides Jupyter Notebook. The list of libraries to run this project are:
-* Pandas
-* Numpy
-* MatplotLib
-* Seaborn
-* XGBoost
-
 
 ## Motivation<a name="motivation"></a>
 
