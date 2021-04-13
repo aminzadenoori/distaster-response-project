@@ -8,7 +8,7 @@
 5. [Results](#results)
 6. [Licensing, Authors, and Acknowledgements](#licensing)
 <p align="center">
-  <img src="disaster response.png" width="350" title="hover text">
+  <img src="disaster response.png" width="600" title="hover text">
  
 </p>
 
