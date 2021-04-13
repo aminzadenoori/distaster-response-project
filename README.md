@@ -47,13 +47,14 @@ In every distater happens ther are are thousands of messages that are sent to or
 
 In this project `ETL` and `Machine Learning` pipelines and multioutput classification method are used 
 
- `data/messages.csv`:
+ `data/messages.csv`: messages csv file 
  
- `data/categories.csv`:
+ `data/categories.csv`: categgories of the messages in the data
  
- `model/train_classifier.py`:
+ `data/process_data.py`: ETL pipeline that extracts, transform, and load the data on a `Sqllite` data base
  
- `data/process_data.py`:
+ `model/train_classifier.py`: load  the data and train a model for classification of messages
+ 
 
 
 ## Results<a name="results"></a>
@@ -63,4 +64,4 @@ There is an evaluation method in classifier that expresses results of the classi
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
-Credit to AirBnB for providing the data. You can find the Licensing for the data and other descriptive information at the Kaggle link available [here](https://www.kaggle.com/airbnb/seattle). This code is free to use.
+This code is free to use and share.
