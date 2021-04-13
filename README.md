@@ -58,7 +58,7 @@ In this project `ETL` and `Machine Learning` pipelines and multioutput classific
 
 ## Results<a name="results"></a>
 
-There is an evaluation method in classifier that expresses results of the classification by the means of `F1score`, `precision`, and `recall`.
+There is an evaluation method in classifier that expresses results of the classification by the means of `F1 Score`, `Precision`, and `Recall`.
 
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
