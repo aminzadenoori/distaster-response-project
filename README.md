@@ -45,15 +45,25 @@ In every distater happens ther are are thousands of messages that are sent to or
 
 ## File Descriptions <a name="files"></a>
 
-In this project `ETL` and `Machine Learning` pipelines and multioutput classification method are used 
+In this project `ETL` and `Machine Learning` pipelines and multioutput classification method are used and in the diagram below file desricption is shown.
 
- `data/messages.csv`: messages csv file 
- 
- `data/categories.csv`: categgories of the messages in the data
- 
- `data/process_data.py`: ETL pipeline that extracts, transform, and load the data on a `Sqllite` data base
- 
- `model/train_classifier.py`: load  the data and train a model for classification of messages
+
+├── app     
+│   ├── run.py                           # Flask file that runs app
+│   └── templates   
+│       ├── go.html                      # Classification result page of web app
+│       └── master.html                  # Main page of web app    
+├── data                   
+│   ├── disaster_categories.csv          # Dataset including all the categories  
+│   ├── disaster_messages.csv            # Dataset including all the messages
+│   └── process_data.py                  # Data cleaning
+├── models
+│   ├── train_classifier.py              # Train ML model
+│   └── classifier.pkl                   # pikkle file of model   
+|   
+|── requirements.txt                     # contains versions of all libraries used.
+|
+└── README.md
  
 
 
