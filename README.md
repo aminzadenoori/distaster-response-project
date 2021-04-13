@@ -51,7 +51,7 @@ In this project `ETL` and `Machine Learning` pipelines and multioutput classific
  
  `data/categories.csv`:
  
- `model/`:
+ `model/train_classifier.py`:
  
  `data/`:
 
