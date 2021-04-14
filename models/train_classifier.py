@@ -86,21 +86,22 @@ def build_model():
     return cv
 
 
-def evaluate_model(model, X_test, Y_test, category_names):
+def evaluate_model(model, X_test, Y_test):
     """
-    evaluate a model by F1 score, precision, and recall.
-    
-    Parameters:
-    model: trained model
-    X_test: X_test data
-    Y_test: label of X_test data 
-    category_names: name of different categories
+    Function: Evaluate the model and print the f1 score, precision and recall for each output category of the dataset.
+    Args:
+    model: the classification model
+    X_test: test messages
+    Y_test: test target
     """
-    y_pred=model.predict(X_test)
-    for i in range(Y_test.shape[1]):
-        print(category_names[i],":")
-        print(classification_report(Y_test[:,i], y_pred[:,i]))
-    
+    y_pred = model.predict(X_test)
+    i = 0
+    for col in Y_test:
+        print('Feature {}: {}'.format(i + 1, col))
+        print(classification_report(Y_test[col], y_pred[:, i]))
+        i = i + 1
+    accuracy = (y_pred == Y_test.values).mean()
+    print('The model accuracy is {:.3f}'.format(accuracy))
 
 
 def save_model(model, model_filepath):
