@@ -3,44 +3,67 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
-    # load messages dataset
+    """
+    load message and categories data from csv files and merge them
+    
+    parameters:
+    messages_filepath: file of mesaage.csv
+    categories_filepath: file path of categories.csv
+    
+    return:
+    df : a dataframe with merged columns
+    
+    """
     messages = pd.read_csv(messages_filepath)
     messages.head()
-    # load categories dataset
     categories = pd.read_csv(categories_filepath)
     categories.head()
-    # merge datasets
     df = pd.merge(messages,categories)
     df.head()
-    # create a dataframe of the 36 individual category columns
     temp=df['categories'].str.split(';',expand=True)
     columns=str.split(df['categories'][0],';')
     clear_column_names=[columnname.split('-')[0] for columnname in columns]
     temp.columns = clear_column_names
     categories = temp
     categories.columns = clear_column_names
-    for column in categories:
+    for column in categories.columns:
         # set each value to be the last character of the string
         categories[column] = categories[column].str.split("-").str.get(1)
         # convert column from string to numeric
         categories[column] = pd.to_numeric(categories[column],downcast='float')
     tempdf=pd.concat([df,categories] ,axis=1)
+    temp=df
+    for column in categories.columns:
+        tempdf.drop(tempdf[tempdf[column]>1].index,inplace=True)
+   
+    
     return(tempdf.drop('categories',axis=1))
 
 
 def clean_data(df):
+    """
+    remove the duplicates from a dataframe     
+    
+    parameters:
+    df(Dataframe): data frame 
+    
+    """
     df=df.drop_duplicates()
+    
     return df
 
 
 def save_data(df, database_filename):
+    """
+    save a dataframe to the database 
+    
+    parameteres:
+    df : datafram to save
+    database_filename : database path to save the dataframe
+    """
     engine = create_engine('sqlite:///'+str(database_filename))
-    df.info()
-    #cur = engine.cursor()
-
-    # drop the test table in case it already exists
     engine.execute("DROP TABLE IF EXISTS cleaned_data")
-    print(df.iloc[0,:])
+    
     df.to_sql('cleaned_data', engine, index=False)  
 
 
@@ -52,7 +75,7 @@ def main():
         print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'
               .format(messages_filepath, categories_filepath))
         df = load_data(messages_filepath, categories_filepath)
-        print(df.isna().sum())
+        
 
         print('Cleaning data...')
         df = clean_data(df)
