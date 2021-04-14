@@ -27,7 +27,7 @@ This project uses Python 3.6, besides Jupyter Notebook. The list of libraries to
 * Sklearn
 
 ## Project Descriptions<a name = "descriptions"></a>
-there are three components in this project that are:
+There are three components in this project that are:
 
 1. **ETL Pipeline:** `process_data.py` file contain the script to create ETL pipline which:
 
