@@ -45,32 +45,25 @@ In every distater happens ther are are thousands of messages that are sent to or
 
 ## File Descriptions <a name="files"></a>
 
-In this project `ETL` and `Machine Learning` pipelines and multioutput classification method are used and in the diagram below file desricption is shown.
-`
-├── app
+The files structure is arranged as below:
 
-│   ├── run.py  # Flask file that runs app
+	- README.md: read me file
+	- ETL Pipeline Preparation.ipynb: contains ETL pipeline preparation code
+	- ML Pipeline Preparation.ipynb: contains ML pipeline preparation code
+	- workspace
+		- \app
+			- run.py: flask file to run the app
+		- \templates
+			- master.html: main page of the web application 
+			- go.html: result web page
+		- \data
+			- disaster_categories.csv: categories dataset
+			- disaster_messages.csv: messages dataset
+			- DisasterResponse.db: disaster response database
+			- process_data.py: ETL process
+		- \models
+			- train_classifier.py: classification code
 
-│   └── templates   
-
-│          ├        ── go.html                      # Classification result page of web app
-
-│                  └── master.html                  # Main page of web app    
-
-├── data                   
-
-│   ├── disaster_categories.csv          # Dataset including all the categories  
-│   ├── disaster_messages.csv            # Dataset including all the messages
-│   └── process_data.py                  # Data cleaning
-├── models
-│   ├── train_classifier.py              # Train ML model
-│   └── classifier.pkl                   # pikkle file of model   
-|   
-|── requirements.txt                     # contains versions of all libraries used.
-|
-└── README.md
- 
-`
 
 ## Results<a name="results"></a>
 
