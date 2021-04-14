@@ -36,10 +36,10 @@ def load_data(database_filepath):
     print('path','sqlite:///'+str(database_filepath))
     engine = create_engine('sqlite:///'+str(database_filepath))
     df = pd.read_sql_table('cleaned_data',engine)
-    X=df['message'].values 
+    X=df['message']
     Y = df.drop(['id','message','original','genre'],axis=1)
     columns=Y.columns.values
-    Y=Y.values
+    Y=Y
     return X,Y,columns
 
 def tokenize(text):
