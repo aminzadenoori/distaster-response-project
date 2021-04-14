@@ -1,12 +1,12 @@
 # Disaster Response Pipeline Project
 ### Table of Contents
-
 1. [Installation](#installation)
-2. [Motivation](#motivation)
-3. [File Descriptions](#files)
-4. [Instructions](#Instructions)
-5. [Results](#results)
-6. [Licensing, Authors, and Acknowledgements](#licensing)
+2. [Description](#description)
+3. [Instructions](#Instructions)
+4. [Motivation](#motivation)
+5. [File Descriptions](#files)
+6. [Results](#results)
+7. [Licensing, Authors, and Acknowledgements](#licensing)
 <p align="center">
   <img src="disaster response.png" width="600" title="hover text">
  
@@ -26,6 +26,30 @@ This project uses Python 3.6, besides Jupyter Notebook. The list of libraries to
 * Sqlalchemy
 * Sklearn
 
+## Project Descriptions<a name = "descriptions"></a>
+The project has three componants which are:
+
+1. **ETL Pipeline:** `process_data.py` file contain the script to create ETL pipline which:
+
+- Loads the `messages` and `categories` datasets
+- Merges the two datasets
+- Cleans the data
+- Stores it in a SQLite database
+
+2. **ML Pipeline:** `train_classifier.py` file contain the script to create ML pipline which:
+
+- Loads data from the SQLite database
+- Splits the dataset into training and test sets
+- Builds a text processing and machine learning pipeline
+- Trains and tunes a model using GridSearchCV
+- Outputs results on the test set
+- Exports the final model as a pickle file
+
+3. **Flask Web App:** the web app enables the user to enter a disaster message, and then view the categories of the message.
+
+The web app also contains some visualizations that describe the data. 
+ 
+
 ## Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
@@ -41,7 +65,8 @@ This project uses Python 3.6, besides Jupyter Notebook. The list of libraries to
 
 ## Motivation<a name="motivation"></a>
 
-In every distater happens ther are are thousands of messages that are sent to orginization that are responsible to handle the situation and classification of these messages is a task that needs to be automated accuratley for the fast resposne. These messages can be calssified into different categories and each message can convey request for help becasue of different co-existence motivations. In this project, a machine learning model has been trained to automate this proccess.
+In this project we want to implement `ETL` and `Machine Learning` pipelines to classify messages in a data set provides by figure8 besides visualization and a web interface that can classifiy user input messages.
+
 
 ## File Descriptions <a name="files"></a>
 
