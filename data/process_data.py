@@ -33,6 +33,7 @@ def load_data(messages_filepath, categories_filepath):
         categories[column] = pd.to_numeric(categories[column],downcast='float')
     tempdf=pd.concat([df,categories] ,axis=1)
     temp=df
+    #drop values except 0 or 1 from coulmns
     for column in categories.columns:
         tempdf.drop(tempdf[tempdf[column]>1].index,inplace=True)
    
