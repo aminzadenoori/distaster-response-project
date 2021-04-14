@@ -26,12 +26,12 @@ def load_data(database_filepath):
     load the data from a database
     
     Parameters:
-    arg1 (string): database file path 
+    database_filepath (string): database file path 
   
     Returns:
-    X: message texts
-    Y: categories of a message
-    columns: columns in the categories
+    X(Dataframe): message texts
+    Y(Dataframe): categories of a message
+    columns(list(string)): columns in the categories
     """
     print('path','sqlite:///'+str(database_filepath))
     engine = create_engine('sqlite:///'+str(database_filepath))
@@ -67,6 +67,9 @@ def build_model():
     """
     build and return a pipeline.
     Here a Random forest classifier is used as the estimator of the MultiOutputClassifier.
+    
+    Returns:
+    cv(GridSearchCV):
     """
     forest = RandomForestClassifier(random_state=1)
     pipeline = Pipeline([
