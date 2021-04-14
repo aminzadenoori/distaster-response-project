@@ -48,8 +48,6 @@ In every distater happens ther are are thousands of messages that are sent to or
 The files structure is arranged as below:
 
 	- README.md: read me file
-	- ETL Pipeline Preparation.ipynb: contains ETL pipeline preparation code
-	- ML Pipeline Preparation.ipynb: contains ML pipeline preparation code
 	- workspace
 		- \app
 			- run.py: flask file to run the app
