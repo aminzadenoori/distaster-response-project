@@ -46,7 +46,7 @@ def tokenize(text):
     """
     tokenize the input text
     Parameters:
-    arg1 (string): input text
+    text (string): input text
   
     Returns:
     List: tokenized text
@@ -69,7 +69,7 @@ def build_model():
     Here a Random forest classifier is used as the estimator of the MultiOutputClassifier.
     
     Returns:
-    cv(GridSearchCV):
+    cv(GridSearchCV): a cross validated model
     """
     forest = RandomForestClassifier(random_state=1)
     pipeline = Pipeline([
