@@ -22,6 +22,17 @@ from sklearn.neighbors import KNeighborsClassifier
 
 
 def load_data(database_filepath):
+    """
+    load the data from a database
+    
+    Parameters:
+    arg1 (string): database file path 
+  
+    Returns:
+    X: message texts
+    Y: categories of a message
+    columns: columns in the categories
+    """
     print('path','sqlite:///'+str(database_filepath))
     engine = create_engine('sqlite:///'+str(database_filepath))
     df = pd.read_sql_table('cleaned_data',engine)
@@ -32,37 +43,70 @@ def load_data(database_filepath):
     return X,Y,columns
 
 def tokenize(text):
-        tokens = word_tokenize(text)
-        lemmatizer = WordNetLemmatizer()
+    """
+    tokenize the input text
+    Parameters:
+    arg1 (string): input text
+  
+    Returns:
+    List: tokenized text
+  
+    """
+    tokens = word_tokenize(text)
+    lemmatizer = WordNetLemmatizer()
 
-        clean_tokens = []
-        for tok in tokens:
+    clean_tokens = []
+    for tok in tokens:
             clean_tok = lemmatizer.lemmatize(tok).lower().strip()
             clean_tokens.append(clean_tok)
 
-        return clean_tokens
+    return clean_tokens
 
 
 def build_model():
+    """
+    build and return a pipeline.
+    Here a Random forest classifier is used as the estimator of the MultiOutputClassifier.
+    """
     forest = RandomForestClassifier(random_state=1)
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
-        ('clf', MultiOutputClassifier(estimator=KNeighborsClassifier()))
+        ('clf', MultiOutputClassifier(estimator=forest))
     ])
-    return pipeline
+    # Create Grid search parameters
+    parameters = {
+        'tfidf__use_idf': (True, False),
+        'clf__estimator__n_estimators': [50, 60, 70]
+    }
+    cv = GridSearchCV(pipeline, param_grid=parameters)
+    return cv
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """
+    evaluate a model by F1 score, precision, and recall.
+    
+    Parameters:
+    model: trained model
+    X_test: X_test data
+    Y_test: label of X_test data 
+    category_names: name of different categories
+    """
     y_pred=model.predict(X_test)
-    print(Y_test.shape[1])
     for i in range(Y_test.shape[1]):
         print(category_names[i],":")
-        print(classification_report(y_test.iloc[:,i].values, y_pred[:,i]))
+        print(classification_report(Y_test[:,i], y_pred[:,i]))
     
 
 
 def save_model(model, model_filepath):
+    """
+    Save a model as a pickle file
+    paramters:
+    model: the model that we want to save
+    model_filepath: path of the pickle file 
+    """
     joblib.dump(model, model_filepath)
     
 
@@ -81,10 +125,10 @@ def main():
         model.fit(X_train, Y_train)
         
         print('Evaluating model...')
-        #evaluate_model(model, X_test, Y_test, category_names)
+        evaluate_model(model, X_test, Y_test, category_names)
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))
-        #print('save path',model_filepath)
+        print('save path',model_filepath)
         save_model(model, model_filepath)
 
         print('Trained model saved!')
