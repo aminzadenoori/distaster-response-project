@@ -1,6 +1,6 @@
 pandas
 regex
-json
+jsonlib
 sklearn
 nltk
 sqlalchemy
