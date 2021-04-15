@@ -6,5 +6,5 @@ nltk
 sqlalchemy
 pickle5
 Flask
-plotty
+plotly
 SQLite3
