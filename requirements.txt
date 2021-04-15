@@ -4,7 +4,7 @@ jsonlib
 sklearn
 nltk
 sqlalchemy
-pickle
+pickle5
 Flask
 plotly
 sqlite3
