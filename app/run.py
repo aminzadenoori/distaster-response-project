@@ -28,8 +28,8 @@ def tokenize(text):
     return clean_tokens
 
 
-file = pathlib.Path("guru99.txt")
-if file.exists ("/data/DisasterResponse.db"):
+file = pathlib.Path("/data/DisasterResponse.db")
+if file.exists :
     print ("File exist")
 else:
     print ("File not exist")
