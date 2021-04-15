@@ -28,14 +28,14 @@ def tokenize(text):
     return clean_tokens
 
 
-file = pathlib.Path("/../data/DisasterResponse.db")
+file = pathlib.Path("/data/DisasterResponse.db")
 assert file.exists == True
 # load data
-engine = create_engine("sqlite:///../data/DisasterResponse.db")
+engine = create_engine("sqlite:///data/DisasterResponse.db")
 df = pd.read_sql_table("cleaned_data", engine)
 
 # load model
-model = joblib.load("../models/classifier.pkl")
+model = joblib.load("/models/classifier.pkl")
 
 
 # index webpage displays cool visuals and receives user input text for model
