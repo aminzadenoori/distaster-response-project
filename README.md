@@ -19,12 +19,14 @@
 ## Installation <a name="installation"></a>
 
 This project uses Python 3.6, besides Jupyter Notebook. The list of libraries to run this project are:
-* Pandas
-* Numpy
-* MatplotLib
-* Sqllite
-* Sqlalchemy
-* Sklearn
+* pandas
+* regex
+* sklearn
+* nltk
+* sqlalchemy
+* pickle5
+* Flask
+* plotly
 
 ## Project Descriptions<a name = "descriptions"></a>
 There are three components in this project that are:
