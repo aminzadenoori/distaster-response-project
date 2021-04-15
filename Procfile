@@ -1,1 +1,1 @@
-worker: app/run.py
+web: python app/run.py
