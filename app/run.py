@@ -11,6 +11,7 @@ from plotly.graph_objs import Bar
 #from sklearn.externals import joblib
 import joblib
 from sqlalchemy import create_engine
+import pathlib
 
 
 app = Flask(__name__)
@@ -26,6 +27,12 @@ def tokenize(text):
 
     return clean_tokens
 
+
+file = pathlib.Path("guru99.txt")
+if file.exists ("/data/DisasterResponse.db"):
+    print ("File exist")
+else:
+    print ("File not exist")
 # load data
 engine = create_engine("sqlite:///../data/DisasterResponse.db")
 df = pd.read_sql_table("cleaned_data", engine)
