@@ -1,6 +1,5 @@
 pandas
 regex
-sys
 json
 sklearn
 nltk
