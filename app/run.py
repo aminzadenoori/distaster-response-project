@@ -28,7 +28,7 @@ def tokenize(text):
     return clean_tokens
 
 
-file = pathlib.Path("/data/DisasterResponse.db")
+file = pathlib.Path("/data/DisasterResponse2.db")
 assert file.exists 
 # load data
 engine = create_engine("sqlite:///../data/DisasterResponse.db")
