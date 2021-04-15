@@ -7,4 +7,4 @@ sqlalchemy
 pickle5
 Flask
 plotly
-pysqlite3
+pysqlite
