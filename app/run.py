@@ -29,10 +29,7 @@ def tokenize(text):
 
 
 file = pathlib.Path("/data/DisasterResponse.db")
-if file.exists :
-    print ("File exist")
-else:
-    print ("File not exist")
+assert file.exists 
 # load data
 engine = create_engine("sqlite:///../data/DisasterResponse.db")
 df = pd.read_sql_table("cleaned_data", engine)
