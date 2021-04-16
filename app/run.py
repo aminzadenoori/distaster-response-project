@@ -28,10 +28,10 @@ def tokenize(text):
     return clean_tokens
 
 
-file = pathlib.Path("data/DisasterResponse.db")
-assert file.exists == True
+#file = pathlib.Path("data/DisasterResponse.db")
+#assert file.exists == True
 # load data
-engine = create_engine("sqlite:///data/DisasterResponse.db")
+engine = create_engine("sqlite:///http://data/DisasterResponse.dbhttps://github.com/aminzadenoori/distaster-response-project/blob/main/data/DisasterResponse.db?raw=true")
 df = pd.read_sql_table("cleaned_data", engine)
 
 # load model
